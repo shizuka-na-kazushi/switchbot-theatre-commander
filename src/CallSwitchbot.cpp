@@ -6,8 +6,6 @@
 #include "CallSwitchbot.h"
 #include "TimeClient.h"
 #include "SwitchBotSecret.h"
-#include "SceneSecret.h"
-
 
 // constants
 const String BASE_URL = "https://api.switch-bot.com/v1.1";

@@ -4,6 +4,7 @@
 #include <pgmspace.h>
 #include "BinFiles.h"
 #include "CallSwitchbot.h"
+#include "SceneSecret.h"
 
 ServoWebServer theServer;
 // Web server on port 80 (http)
