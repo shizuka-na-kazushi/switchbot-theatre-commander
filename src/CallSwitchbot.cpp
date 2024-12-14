@@ -6,7 +6,7 @@
 #include "CallSwitchbot.h"
 #include "TimeClient.h"
 #include "SwitchBotSecret.h"
-
+#include "SceneSecret.h"
 
 
 // constants
