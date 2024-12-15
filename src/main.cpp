@@ -54,25 +54,6 @@ void setup() {
 
 
 void loop() {
-
-  // delay(2000);
-  // servo1.write(0);
-  // Serial.println("servo was set to 0");
-
-  // delay(2000);
-  // servo1.write(15);
-  // Serial.println("servo was set to 90");
-  
-  // delay(2000);
-  // servo1.write(30);
-  // Serial.println("servo was set to 180");
-  
-
-  //  delay(1000);
-  //  digitalWrite(SERVO_PIN, HIGH);
-  //  delay(1000);
-  //  digitalWrite(SERVO_PIN, LOW);
-
   theServer.loop(); 
   timeClient.update();
 }

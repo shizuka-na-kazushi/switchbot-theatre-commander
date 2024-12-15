@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
     <title>Local theater system</title>
     <style>
         body, html {
@@ -108,17 +109,23 @@
         }
 
         .color4 {
-            background-color: #efefef;
+            background-color: #ff0f0f;
         }
         .color4:hover {
+            background-color: #ff870f;
+        }
+        
+        .colorcmd {
+            background-color: #efefef;
+        }
+        .colorcmd:hover {
             background-color: #afafaf;
         }
 
     </style>
     <script>
       function changeVol(index) {
-        const table = {"1": "/level0", "2": "/level1", "3": "/level2"};
-        fetch(table[index]);
+        fetch("/level" + index);
       }
       function execScene(enabled) {
         fetch(enabled ? "/theatreOn" : "/theatreOff");
@@ -130,14 +137,15 @@
         <div class="header">
             <div class="header-title">Theater</div>
             <div class="header-buttons">
-                <button class="button color4 button-on" onclick="execScene(true)"></button>
-                <button class="button color4 button-off" onclick="execScene(false)"></button>
+                <button class="button colorcmd button-on" onclick="execScene(true)"></button>
+                <button class="button colorcmd button-off" onclick="execScene(false)"></button>
             </div>
         </div>
 
-        <button class="button color1" onclick="changeVol(1)">Level 1</button>
-        <button class="button color2" onclick="changeVol(2)">Level 2</button>
-        <button class="button color3" onclick="changeVol(3)">Level 3</button>
+        <button class="button color1" onclick="changeVol(0)">Low</button>
+        <button class="button color2" onclick="changeVol(1)">Mid 1</button>
+        <button class="button color3" onclick="changeVol(2)">Mid 2</button>
+        <button class="button color4" onclick="changeVol(3)">High</button>
     </div>
 </body>
 </html>
