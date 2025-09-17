@@ -2,6 +2,7 @@
 #include <WiFi.h>
 #include <pgmspace.h>
 #include "ServoWebServer.h"
+#include "ProgmemStream.h"
 
 ServoWebServer theServer;
 // Web server on port 80 (http)
@@ -100,10 +101,8 @@ boolean respondBinFile(const HeaderInfo& header, WiFiClient& client, const uint8
   client.println("Connection: close");
   client.println();
 
-  // バイナリデータの書き込み
-  for (size_t i = 0; i < length; i++) {
-    client.write(pgm_read_byte(&data[i]));
-  }
+  ProgmemStream stream(data, length);
+  client.write(stream);
   return true;
 }
 
